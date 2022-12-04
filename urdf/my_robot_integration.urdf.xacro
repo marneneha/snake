@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!-- Name your robot here -->
+<robot name ="snake" xmlns:xacro="http://wiki.ros.org/xacro">
+
+<!-- Include your urdf files here -->
+	<!-- Include Robot's urdf filepath -->
+	<!-- Include Lidar's urdf filepath -->
+	<xacro:include filename="$(find snake)/urdf/snake.urdf"/>
+
+<!-- Add your gazebo sensors here -->
+
+<!--  Gazebo plugin for control here is already added for you -->
+<gazebo>
+	<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+		<robotNamespace>/snake</robotNamespace>
+		<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+		<legacyModeNS>true</legacyModeNS>
+	</plugin>
+</gazebo>
+
+	<transmission name="joint1_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="joint1">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="joint1_motor">
+			<mechanicalReduction>1</mechanicalReduction>
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</actuator>
+  	</transmission>
+
+	<transmission name="joint2_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="joint2">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="joint2_motor">
+			<mechanicalReduction>1</mechanicalReduction>
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</actuator>
+  	</transmission>
+
+	<transmission name="joint3_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="joint3">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="joint3_motor">
+			<mechanicalReduction>1</mechanicalReduction>
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</actuator>
+  	</transmission>
+
+	<transmission name="joint4_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="joint4">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="joint4_motor">
+			<mechanicalReduction>1</mechanicalReduction>
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</actuator>
+  	</transmission>
+
+	<transmission name="joint5_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="joint5">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="joint5_motor">
+			<mechanicalReduction>1</mechanicalReduction>
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</actuator>
+  	</transmission>
+
+	<transmission name="joint6_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="joint6">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="joint6_motor">
+			<mechanicalReduction>1</mechanicalReduction>
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</actuator>
+  	</transmission>
+
+	<transmission name="joint7_trans">
+		<type>transmission_interface/SimpleTransmission</type>
+		<joint name="joint7">
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</joint>
+		<actuator name="joint7_motor">
+			<mechanicalReduction>1</mechanicalReduction>
+			<hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+		</actuator>
+  	</transmission>
+<!-- Create a joint between your robot and sensor -->
+	<link name="dummy_link">
+	<pose> 0 0 0 0 0 0
+		</pose>
+	</link>
+  
+	<joint name="dummy_joint" type="fixed">
+		<!-- <origin rpy="0 0 0" xyz="0 0 0"/> -->
+		<parent link="dummy_link"/>
+		<child link="base_link"/>
+		<!-- <axis xyz="0 0 0"/> -->
+		<!-- <limit effort="0" lower="0" upper="0" velocity="0"/> --> 
+	</joint>
+
+</robot>	
+
+
