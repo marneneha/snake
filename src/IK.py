@@ -1,4 +1,4 @@
-from sympy import BlockMatrix, Matrix, symbols, cos, sin, diff, pprint, simplify, pi
+from sympy import zeros, BlockMatrix, Matrix, symbols, cos, sin, diff, pprint, simplify, pi
 import numpy as np
 # from math import 
 
@@ -53,38 +53,31 @@ T07 = T06*T67
 # pprint("T07 is")
 # pprint(T07)
 
-Z01 = T01[:,2]
-Z02 = T02[:,2]
-Z04 = T04[:,2]
-Z05 = T05[:,2]
-Z06 = T06[:,2]
-Z07 = T07[:,2]
-X0p = T06[:,3]
+Z01 = simplify(T01[:,2])
+Z02 = simplify(T02[:,2])
+Z04 = simplify(T04[:,2])
+Z05 = simplify(T05[:,2])
+Z06 = simplify(T06[:,2])
+Z07 = simplify(T07[:,2])
+X0p = simplify(T07[:,3])
 q_dot1 = simplify(diff(X0p, theta1))
 q_dot2 = simplify(diff(X0p, theta2))
 q_dot4 = simplify(diff(X0p, theta4))
 q_dot5 = simplify(diff(X0p, theta5))
 q_dot6 = simplify(diff(X0p, theta6))
 q_dot7 = simplify(diff(X0p, theta7))
-upper_jacobian_matrix = BlockMatrix([q_dot1,q_dot2,q_dot4,q_dot5,q_dot6,q_dot7])
+upper_jacobian_matrix = Z01.row_join(Z02).row_join(Z04).row_join(Z05).row_join(Z06).row_join(Z07)
 upper_jacobian_matrix = upper_jacobian_matrix.row_del(3)
 pprint("upper_jacobian_matrix is")
 pprint(upper_jacobian_matrix)
 
-Z01.row_join(Z02)
-Z01.row_join(Z04)
-Z01.row_join(Z05)
-Z01.row_join(Z06)
-Z01.row_join(Z07)
-lower_jacobian_matrix = BlockMatrix([Z01, Z02, Z04, Z05, Z06, Z07])
-
-pprint("upper_jacobian_matrix is")
+lower_jacobian_matrix = q_dot1.row_join(q_dot2).row_join(q_dot4).row_join(q_dot5).row_join(q_dot6).row_join(q_dot7)
+lower_jacobian_matrix = lower_jacobian_matrix.row_del(3)
+pprint("lower_jacobian_matrix is")
 pprint(lower_jacobian_matrix)
-jacobian = BlockMatrix([[upper_jacobian_matrix],[lower_jacobian_matrix]])
+jacobian = upper_jacobian_matrix.col_join(lower_jacobian_matrix)
 pprint("jacobian is")
 pprint(jacobian)
-# q_dot1.col_join(Z01)
-# pprint("jacobian is")
-# pprint(q_dot1)
-# pprint(q_dot1(0,1))
-# Inv_Jacob = q_dot1.inv()
+Inv_Jacob = jacobian.inv()
+pprint("inverse of jacobian is")
+pprint(Inv_Jacob)
