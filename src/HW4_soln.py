@@ -6,6 +6,7 @@
 from sympy import Matrix, symbols, cos, sin, simplify, pi, pprint, diff
 from numpy import linspace, meshgrid, ones_like
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 import time
 
 # Simulation parameters 
@@ -162,9 +163,10 @@ if __name__ == '__main__':
         q_joint = update_joint_angle(q_joint, q_dot_joint)
 
         (x_0p, y_0p, z_0p) = forward_position_kinematics(q_joint)
+        print(x_0p, y_0p, z_0p)
 
         # plot on circle as live points from forward kinematics for every delta_time seconds
-        ax.scatter(x_0p,y_0p,z_0p)
+        ax.scatter(y_0p,z_0p,)
 
         plt.pause(delta_time)
 
