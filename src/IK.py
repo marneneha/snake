@@ -72,10 +72,10 @@ jacobian = lower_jacobian_matrix.col_join(upper_jacobian_matrix)
 pprint("jacobian_matrix is")
 pprint(jacobian)
 
-theta = pi/2
+theta = 0
 Vx = 0
-Vy = -1*4*pi*cos(theta)
-Vz = 4*pi*sin(theta)
+Vy = 4*pi*cos(theta)
+Vz = -4*pi*sin(theta)
 Wx = 0
 Wy = 0
 Wz = 0
@@ -92,13 +92,13 @@ ax.set_xlabel('X')
 ax.set_ylabel('Y')
 ax.set_zlabel('Z')
 
-while theta<=5*pi/2:
+while t<=5.0:
     jacobian = jacobian.evalf(subs={theta1:joint_angle[0],theta2:joint_angle[1],theta4:joint_angle[2],theta5:joint_angle[3],theta6:joint_angle[4],theta7:joint_angle[5]})
     # pprint("jacobian is")
     # pprint(jacobian)
     Inv_Jacob = jacobian.inv()
     Vy = 4*pi*cos(theta)
-    Vz = -1*4*pi*sin(theta)
+    Vz = -4*pi*sin(theta)
 
     vel_vec = Matrix([ Vx, Vy, Vz, Wx, Wy, Wz])
     joint_angular_vel = Inv_Jacob*vel_vec
@@ -109,11 +109,11 @@ while theta<=5*pi/2:
     # pprint(T07)
     state_vec = T07.evalf(subs={theta1:joint_angle[0],theta2:joint_angle[1],theta4:joint_angle[2],theta5:joint_angle[3],theta6:joint_angle[4],theta7:joint_angle[5]})
     print(state_vec[0,3], state_vec[1,3], state_vec[2,3])
-    ax.scatter(state_vec[1,3],state_vec[2,3],)
-    plt.pause(deltaT)
+    ax.scatter(82.5, state_vec[1,3],state_vec[2,3])
+    plt.pause(0.1)
 
     theta = theta+(2*pi/50)
+    print(theta)
     t=t+deltaT
 
 plt.show()
-
