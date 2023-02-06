@@ -1,0 +1,5 @@
+1. roslaunch snake template_launch.launch
+2. rosrun snake LinearProgression.py
+3. rosrun snake LateralUndulation.py 
+4. rosrun snake Sidewinding.py
+5. rosrun snake FKandIK.py

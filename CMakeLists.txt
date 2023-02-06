@@ -13,6 +13,6 @@ foreach(dir config launch meshes urdf)
 		DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
 
-catkin_install_python(PROGRAMS src/FKvalidation.py src/FKandIK.py src/IK.py src/HW4_soln.py src/FKandIK.py src/FKvalidation.py src/LinearProgression.py src/LateralUndulation.py src/SideWinding.py
+catkin_install_python(PROGRAMS src/FKandIK.py src/LinearProgression.py src/LateralUndulation.py src/Sidewinding.py src/IK.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

@@ -6,9 +6,7 @@ import time
 from std_msgs.msg import Float64
 import rospy
 if __name__ == '__main__':
-    print("I am here1")
     rospy.init_node('snake_node', anonymous=True)
-    print("I am here2")
     pub_joint1 = rospy.Publisher('/snake/joint1Controller/command', Float64, queue_size=10) 
     pub_joint2 = rospy.Publisher('/snake/joint2Controller/command', Float64, queue_size=10) 
     pub_joint3 = rospy.Publisher('/snake/joint3Controller/command', Float64, queue_size=10) 
@@ -16,9 +14,7 @@ if __name__ == '__main__':
     pub_joint5 = rospy.Publisher('/snake/joint5Controller/command', Float64, queue_size=10) 
     pub_joint6 = rospy.Publisher('/snake/joint6Controller/command', Float64, queue_size=10) 
     pub_joint7 = rospy.Publisher('/snake/joint7Controller/command', Float64, queue_size=10) 
-    print("I am here3")
     rate = rospy.Rate(5) # 5hz
-    print("I am here4")
     Ax = pi/6
     Ay = pi/6
     Wx = 5*pi/6
@@ -26,10 +22,8 @@ if __name__ == '__main__':
     deltaX = 2*pi/3
     deltaY = 2*pi/3
     t = 0
-    print("I am here5")
     while not rospy.is_shutdown():
         for i in range(1, 7):
-            print("I am here6")
             if i == 1:
                 q = Ax*sin(Wx*t+i*deltaX)
                 pub_joint1.publish(q)
@@ -51,6 +45,5 @@ if __name__ == '__main__':
             elif i==7:
                 q = Ax*sin(Wx*t+i*deltaX)
                 pub_joint7.publish(q)
-        print("I am here7")
         rate.sleep()
         t = t+2.0
