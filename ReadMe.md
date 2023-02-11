@@ -68,14 +68,14 @@ You should see following result
 rosrun snake LinearProgression.py
 ```
 
-![LinearProgression](https://github.com/marneneha/snake/blob/master/ResultImages/LinearPropagation.gif)
+![LinearProgression](https://github.com/marneneha/snake/blob/master/ResultImages/LateralUndualtion.gif)
 
 - LateralUndulation
 ```
 rosrun snake LateralUndulation.py
 ``` 
 
-![LateralUndulation](https://github.com/marneneha/snake/blob/master/ResultImages/LateralUndualtion.gif)
+![LateralUndulation](https://github.com/marneneha/snake/blob/master/ResultImages/LinearPropagation.gif)
 
 - Sidewinding
 ```
