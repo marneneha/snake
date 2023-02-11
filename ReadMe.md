@@ -2,13 +2,15 @@
 This repository implements snake motion gaites
 ## Kinematics
 - DH Parameter
-![]()
+![DH_Parameter](https://github.com/marneneha/snake/blob/master/DH_Parameter_snake.png)
 - Transformation matrix
-![]()
+Transformation Matrix from Base to End Effector in home position
+![Transformation Matrix](https://github.com/marneneha/snake/blob/master/Transformation_Matrix.png)
 ## Dynamic
 - Gait Parameter
 ![Gait_snake_image](https://github.com/marneneha/snake/blob/master/Gait.png)
 - Euation of motion
+![Euation of motion](https://github.com/marneneha/snake/blob/master/Equation_Information.png)
 
 ## Prerequisite
 - OS: Unbuntu(20.04)
@@ -41,7 +43,7 @@ roslaunch snake template_launch.launch
 ```
 You should see following result
 ## Result
-![Result_after_launch]()
+![Result_after_launch](https://github.com/marneneha/snake/blob/master/Result_launch%20_of_snake_model_repo.png)
 ## Linear Progression
 ```
 rosrun snake LinearProgression.py
