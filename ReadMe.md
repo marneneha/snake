@@ -1,5 +1,5 @@
 # Snake robot
-This repository implements snake motion gaites
+This repository implements snake motion gaits
 
 
 
