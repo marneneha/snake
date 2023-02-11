@@ -6,12 +6,12 @@ This repository implements snake motion gaites
 ## Kinematics
 - DH Parameter
 
-![DH_Parameter](https://github.com/marneneha/snake/blob/master/DH_Parameter_snake.png)
+![DH_Parameter](https://github.com/marneneha/snake/blob/master/ResultImages/DH_Parameter_snake.png)
 - Transformation matrix
 
 Transformation Matrix from Base to End Effector in home position
 
-![Transformation Matrix](https://github.com/marneneha/snake/blob/master/Transformation_Matrix.png)
+![Transformation Matrix](https://github.com/marneneha/snake/blob/master/ResultImages/Transformation_Matrix.png)
 
 
 
@@ -21,10 +21,10 @@ Transformation Matrix from Base to End Effector in home position
 
 **Tune these values to achieve different motions**
 
-![Gait_snake_image](https://github.com/marneneha/snake/blob/master/Gait.png)
+![Gait_snake_image](https://github.com/marneneha/snake/blob/master/ResultImages/Gait.png)
 - Euation of motion
 
-![Euation of motion](https://github.com/marneneha/snake/blob/master/Equation_Information.png)
+![Euation of motion](https://github.com/marneneha/snake/blob/master/ResultImages/Equation_Information.png)
 
 
 
@@ -60,27 +60,27 @@ roslaunch snake template_launch.launch
 ```
 You should see following result
 ## Result
-![Result_after_launch](https://github.com/marneneha/snake/blob/master/Result_launch%20_of_snake_model_repo.png)
+![Result_after_launch](https://github.com/marneneha/snake/blob/master/ResultImages/Result_launch%20_of_snake_model_repo.png)
 ## Snake Motions
 - Linear Progression
 ```
 rosrun snake LinearProgression.py
 ```
 
-![LinearProgression]()
+![LinearProgression](https://github.com/marneneha/snake/blob/master/ResultImages/LinearPropagation.gif)
 
 - LateralUndulation
 ```
 rosrun snake LateralUndulation.py
 ``` 
 
-![LateralUndulation]()
+![LateralUndulation](https://github.com/marneneha/snake/blob/master/ResultImages/LateralUndualtion.gif)
 
 - Sidewinding
 ```
 rosrun snake Sidewinding.py
 ```
 
-![Sidewinding]()
+![Sidewinding](https://github.com/marneneha/snake/blob/master/ResultImages/SideWinding.gif)
 
 *Reference: ReBiS – Reconfigurable Bipedal Snake Robot*
