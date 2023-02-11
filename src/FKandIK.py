@@ -130,8 +130,8 @@ print("*************************************************************************
 print(shape(J))
 
 qJoint = Matrix([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]) # only 6 values because we are fixing q1
-x_dot = 
-z_dot = 
+# x_dot = 
+# z_dot = 
 J = J.evalf(3,subs={ q1: qJoint[0], q2: qJoint[1], q4: qJoint[2], q5: qJoint[3], q6: qJoint[4], q7: qJoint[5]})
 Jinv = J.inv()
 X_dot = Matrix([0.0, 15, 0.0, 0.0, 0.0, 0.0, 0.0]) # Generalized end_effector cartesian velocity components
