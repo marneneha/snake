@@ -1,5 +1,6 @@
+![](https://github.com/marneneha/snake/actions/workflows/python-package.yml/badge.svg)
 # Snake robot
-This repository implements snake motion gaites
+This repository implements snake motion gaits
 
 
 
@@ -84,3 +85,5 @@ rosrun snake Sidewinding.py
 ![Sidewinding](https://github.com/marneneha/snake/blob/master/ResultImages/SideWinding.gif)
 
 *Reference: ReBiS – Reconfigurable Bipedal Snake Robot*
+
+*Credits: Rohan Thakker, Ajinkya Kamat, Sachin Bharambe, Shital Chiddarwar, and K. M. Bhurchandi*
