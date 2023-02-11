@@ -1,4 +1,4 @@
-![](https://github.com/marneneha/snake/actions/workflows/python-package/badge.svg
+![](https://github.com/marneneha/snake/actions/workflows/python-package.yml/badge.svg
 # Snake robot
 This repository implements snake motion gaits
 
