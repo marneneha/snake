@@ -82,3 +82,5 @@ rosrun snake Sidewinding.py
 ```
 
 ![Sidewinding]()
+
+*Reference: ReBiS – Reconfigurable Bipedal Snake Robot*
