@@ -7,6 +7,7 @@ This repository implements snake motion gaites
 ![]()
 ## Dynamic
 - Gait Parameter
+![Gait_snake_image](https://github.com/marneneha/snake/blob/master/Gait.png)
 - Euation of motion
 
 ## Prerequisite
